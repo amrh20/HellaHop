@@ -1,0 +1,22 @@
+@import "../styles/variables.scss";
+
+label {
+    margin: 0;
+}
+// buttons
+.temp_button {
+    color: $black;
+    padding: 5px 22px;
+    border-radius: 18px;
+    vertical-align: top;
+    display: inline-block;
+    background: transparent;
+    border: 1px solid $main-color;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    &:hover {
+        background-color: $main-color;
+        color: $white;
+    }
+}
