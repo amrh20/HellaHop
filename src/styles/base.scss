@@ -2,7 +2,7 @@
 
 /* General elements
 ======================*/
-*,p {
+*,p,h1,h2,h3,h4 {
   margin: 0;
   padding: 0;
 }
@@ -84,6 +84,15 @@ ul {
   margin: 0;
 }
 
-/* inputs
+/* h2
 ============================*/
+.section_title {
+  text-align: center;
+  font-size: 30px;
+  text-transform: capitalize;
+  font-weight: 700;
+  width: fit-content;
+  margin: 0 auto;
+  
+}
 
