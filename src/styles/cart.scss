@@ -10,13 +10,53 @@
         text-align: center;
         background-color: #eeeeee;
         cursor: pointer;
+        position: relative;
         height: 270px;
+        display: flex;
+       align-items: center;
+       justify-content: center;
+
         img {
             max-height: 250px;
         }
 
     }
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #eee;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ .cart_img:hover .overlay {
+  width: 100%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
     .cart_deatils {
         text-align: center;
         padding: 0 25px;
@@ -26,6 +66,7 @@
 
             i {
                 color: #ffa200;
+                font-size: 14px;
             }
         }
 
@@ -69,23 +110,28 @@
         }
 
         .product-icons {
-            display: flex;
-            justify-content: center;
             font-size: 18px;
             padding: 10px 0;
             border-top: 1px solid #ddd;
-            color: $icons-color;
+            color: #000;
+            position: absolute;
+            z-index: 222;
+            right: -5px;
+            top: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease-in-out;
             & > div {
-                margin-right: 15px;
-            }
-        }
-
-       
+                margin-top: 7px;
+                cursor: pointer;
+                &:hover {
+                    color: $main-color
+                }
+            }        
+        }     
     }
     .product-labels {
-        display: flex;
         color: $white;
-        justify-content: space-between;
         position: absolute;
         width: 100%;
         margin-top: 15px;
@@ -106,9 +152,27 @@
             padding: 3px 12px;
             border-radius: 15px;
             font-size: 14px;
+            width : fit-content;
+            margin-top: 10px;
             &:first-of-type {
                 margin: 0;
             }
         }
     }
+    &:hover {
+        .product-icons {
+           opacity: 1;
+           visibility : visible;
+           right: 8px;
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
