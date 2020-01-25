@@ -2,32 +2,70 @@ $(document).ready(function () {
     // show cart content at header
     $(".cart-icon_head").click(function () {
         $(".shopping-cart_content").toggleClass("showcontent");
-        if ($(".wishlist-view_content").hasClass("showcontent")) {
-            $(".wishlist-view_content").removeClass("showcontent")
+        // if ($(".wishlist-view_content").hasClass("showcontent")) {
+        //     $(".wishlist-view_content").removeClass("showcontent")
+        // }
+        // if ($(".compare-view_content").hasClass("showcontent")) {
+        //     $(".compare-view_content").removeClass("showcontent")
+		// }
+		$(".cart-icon_head i").toggleClass("whiteColor");
+		if ($(".wishlist-icon_head i").hasClass("whiteColor")) {
+			$(".wishlist-icon_head i").removeClass("whiteColor")
         }
-        if ($(".compare-view_content").hasClass("showcontent")) {
-            $(".compare-view_content").removeClass("showcontent")
-        }
+        if ($(".compare-icon_head i").hasClass("whiteColor")) {
+			$(".compare-icon_head i").removeClass("whiteColor")
+		}	
+		$(".wishlist-view").toggleClass("hideIcons")
+		$(".compare-view").toggleClass("hideIcons")
+		$(".account-view").toggleClass("hideIcons")
+	//   show overlay
+	$(".body_overlay").toggleClass("show_overlay")
     })
     // show wishlist content at header
     $(".wishlist-icon_head").click(function () {
         $(".wishlist-view_content").toggleClass("showcontent")
-        if ($(".shopping-cart_content").hasClass("showcontent")) {
-            $(".shopping-cart_content").removeClass("showcontent")
+        // if ($(".shopping-cart_content").hasClass("showcontent")) {
+        //     $(".shopping-cart_content").removeClass("showcontent")
+        // }
+        // if ($(".wishlist-view_content").hasClass("showcontent")) {
+        //     $(".compare-view_content").removeClass("showcontent")
+		// }
+		$(".shopping-cart").toggleClass("hideIcons")
+		$(".compare-view").toggleClass("hideIcons")
+		$(".account-view").toggleClass("hideIcons")
+
+		$(".wishlist-icon_head i").toggleClass("whiteColor")
+		if ($(".cart-icon_head i").hasClass("whiteColor")) {
+			$(".cart-icon_head i").removeClass("whiteColor")
         }
-        if ($(".wishlist-view_content").hasClass("showcontent")) {
-            $(".compare-view_content").removeClass("showcontent")
-        }
+        if ($(".compare-icon_head i").hasClass("whiteColor")) {
+			$(".compare-icon_head i").removeClass("whiteColor")
+		}
+		//   show overlay
+	$(".body_overlay").toggleClass("show_overlay")
     })
     // show compare content at header
     $(".compare-icon_head").click(function () {
         $(".compare-view_content").toggleClass("showcontent");
-        if ($(".wishlist-view_content").hasClass("showcontent")) {
-            $(".wishlist-view_content").removeClass("showcontent")
-        }
-        if ($(".shopping-cart_content").hasClass("showcontent")) {
-            $(".shopping-cart_content").removeClass("showcontent")
-        }
+        // if ($(".wishlist-view_content").hasClass("showcontent")) {
+        //     $(".wishlist-view_content").removeClass("showcontent")
+        // }
+        // if ($(".shopping-cart_content").hasClass("showcontent")) {
+        //     $(".shopping-cart_content").removeClass("showcontent")
+		// }
+		$(".shopping-cart").toggleClass("hideIcons")
+		$(".wishlist-view").toggleClass("hideIcons")
+		$(".account-view").toggleClass("hideIcons")
+
+		$(".compare-icon_head i").toggleClass("whiteColor")
+		if ($(".cart-icon_head i").hasClass("whiteColor")) {
+			$(".cart-icon_head i").removeClass("whiteColor")
+		}
+		if ($(".wishlist-icon_head i").hasClass("whiteColor")) {
+            $(".wishlist-icon_head i").removeClass("whiteColor")
+		}
+		//   show overlay
+	$(".body_overlay").toggleClass("show_overlay")
     })
     // show account view at header
     $(".account-icon_head").click(function () {
@@ -40,11 +78,14 @@ $(document).ready(function () {
         }
         if ($(".shopping-cart_content").hasClass("showcontent")) {
             $(".shopping-cart_content").removeClass("showcontent")
-        }
+		}
+		//   show overlay
+	$(".body_overlay").toggleClass("show_overlay")
     })
     // close account view
     $(".close_accountView").click(function () {
-        $(".accounts_view ").css("right", "-350px")
+		$(".accounts_view ").css("right", "-350px");
+		$(".body_overlay").removeClass("show_overlay")
     })
 
 });

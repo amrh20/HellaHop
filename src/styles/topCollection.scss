@@ -39,7 +39,6 @@
   }
 }
 
-
 /* MAKE IT CUTE ----- */
 .tabs {
 	position: relative;
@@ -109,10 +108,9 @@
 
 [type=radio]:checked ~ label ~ .tabby-content {
 	z-index: 1;
-	
 	/* show/hide */
-		opacity: 1;
-		transform: scale(1);
+	opacity: 1;
+	transform: scale(1);
 }
 
 /* BREAKPOINTS ----- */
