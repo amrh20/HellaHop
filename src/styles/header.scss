@@ -1,5 +1,7 @@
 @import "../styles/variables.scss";
-
+.hideIcons {
+  opacity: 0 !important;
+}
 .header {
 
   // start top header
@@ -110,13 +112,18 @@
       // icons
       .icons {
         display: flex;
-
+        z-index: 2;
         i {
           font-size: 20px;
           color: $icons-color;
           cursor: pointer;
+          &:focus {
+            color: $white;
+          }
         }
-
+        .whiteColor {
+         color: #fff;
+        }
         // shopping cart view
         .shopping-cart {
           position: relative;
@@ -306,6 +313,7 @@
 
 
       }
+     
     }
   }
 
@@ -777,8 +785,6 @@
 .dropdown_one-childern {
   position: absolute;
   left: 100%;
-  width: 100%;
-  padding: 0;
   box-shadow: 0 1px 2px 1px #999;
   list-style-type: none;
   background: $white;
@@ -788,6 +794,9 @@
   opacity: 0;
   visibility: hidden;
   transition: all .3s ease-in-out;
+  width: auto;
+  padding-right: 10px;
+  white-space: nowrap;
   ul {
     li {
     margin-left: 15px;
