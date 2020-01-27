@@ -1,0 +1,11 @@
+@import "../styles/variables.scss";
+
+.instagram_Section {
+    height: 300px;
+    background-color: $main-color;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-top: 30px;
+}
