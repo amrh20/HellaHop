@@ -27,108 +27,73 @@
       }
   }
   // collection content
-  .collection_content {
-    .row {
-      margin-top: 30px
-    }
-  }
-  // collection button
-  .top_collection-btn {
+}
+// collection button
+.top_collection-btn {
     margin : 30px 0;
     text-align: center
   }
-}
 
-/* MAKE IT CUTE ----- */
-.tabs {
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+// color
+$color: blue;
+
+// TAB ~~~~~~~~~~~~~~~ (.)(.)
+.tab {
+	margin-bottom: 20px;
 	position: relative;
+	overflow: hidden;
+	background: #fff;
+	width: 70%;
+	margin: 0 auto;
+	line-height: 1.5;
+	font-weight: 300;
+	color: #000;
+}
+
+.tabs {
 	display: flex;
-	min-height: 300px;
-	border-radius: 8px 8px 0 0;
-    height: 480px;
-}
-
-.tabby-tab {
-	flex: 1;
-}
-
-.tabby-tab label {
-	display: block;
-	box-sizing: border-box;
-	/* tab content must clear this */
-		height: 40px;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	width: 100%;
 	
-	padding: 10px;
-	text-align: center;
-	// background: #9768D1;
-	cursor: pointer;
-	transition: background 0.5s ease;
-	
-}
-
-// .tabby-tab label:hover {
-// 	background: #7B52AB;
-// }
-
-.tabby-content {
-	position: absolute;
-	left: 0; bottom: 0; right: 0;
-	/* clear the tab labels */
-	top: 40px; 
-	margin-top: 30px;
-	border-radius: 0 0 8px 8px;
-	transition: 
-		opacity 0.8s ease,
-		transform 0.8s ease		;
-	
-	/* show/hide */
-		opacity: 0;
-		transform: scale(0.1);
-		transform-origin: top left;
-	
-}
-
-.tabby-content img {
-	float: left;
-	margin-right: 20px;
-	border-radius: 8px;
-}
-
-
-/* MAKE IT WORK ----- */
-
-.tabby-tab [type=radio] { display: none; }
-[type=radio]:checked ~ label {
-    // border-bottom: 1px solid $main-color;
-    color: $main-color;
-    z-index: 2;
-    width: fit-content;
-    margin: 0 auto; 
-}
-
-[type=radio]:checked ~ label ~ .tabby-content {
-	z-index: 1;
-	/* show/hide */
-	opacity: 1;
-	transform: scale(1);
-}
-
-/* BREAKPOINTS ----- */
-@media screen and (max-width: 767px) {
-	.tabs { min-height: 400px;}
-}
-
-@media screen and (max-width: 480px) {
-	.tabs { min-height: 580px; }
-	.tabby-tab label { 
-		height: 60px;
+	li {
+		float: left;
+		line-height: 38px;
+		overflow: hidden;
+		padding: 0;
+		position: relative;
 	}
-	.tabby-content { top: 60px; }
-	.tabby-content img {
-		float: none;
-		margin-right: 0;
-		margin-bottom: 20px;
+
+	a {
+		padding: 0 30px;
+		font-size: 23px;
+		font-weight: 600;
 	}
 }
 
+.tabs_item {
+	display: none;
+	padding: 30px 0;
+	&:first-child {display: block;}
+	.row {
+	  margin-top: 40px;
+	  &:first-of-type {
+		  margin: 0;
+	  }
+	}
+}
+
+.current a {
+	color: $main-color;
+}
+
+// END TAB ~~~~~~~~~~~~~~~ (.)(.)
 
