@@ -2,10 +2,13 @@
 
 .instagram_Section {
     margin-bottom: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
+     
     margin: 50px  30px;
+    .instagram_Section-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
     img {
         max-height: 300px;
     }
@@ -17,4 +20,84 @@
             margin-left:15px;
         }
     }
+    .column {
+        position: relative;
+        cursor: pointer;
+        i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 50px;
+            transform: scale(0) translate(-50%, -50%);
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease-in-out;
+            color: #e95950;
+        }
+        figure {
+            position: relative; 
+            overflow: hidden;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            filter: grayscale(.8);
+            &:before {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              z-index: 2;
+              display: block;
+              content: '';
+              width: 0;
+              height: 0;
+              background: rgba(0,0,0,.2);
+              border-radius: 100%;
+              transform: translate(-50%, -50%);
+              opacity: 0;
+          }
+          &:hover{
+              animation: bloom ease-in-out .75s forwards;
+              &:before {
+                  animation: circle .75s;
+              }
+            }
+          }
+         &:hover {
+            i {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1) translate(-50%, -50%);;
+            }
+         }
+    }
+    
+
+
+@keyframes bloom {
+    0% {
+        filter: grayscale(.8);
+    }
+    40% {
+        filter: grayscale(.5);
+    }
+    100% {
+        filter: grayscale(0);
+    }
+}
+@keyframes circle {
+    0% {
+        opacity: .5;
+    background: rgba(213,156,34,.2);
+    
+    }
+    40% {
+        opacity: 1;
+    background: rgba(213,34,160,.2);
+    }
+    100% {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
+    }
+}
 }
