@@ -20,5 +20,11 @@
         display: inline-block;
         font-size: 14px;
       }
+      .specail_products {
+        margin-top: 30px;
+        @media (max-width: 768px) {
+          margin: 0;
+        }
+      }
     }
 

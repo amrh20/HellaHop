@@ -85,9 +85,20 @@ $(document).ready(function () {
     // close account view
     $(".close_accountView").click(function () {
 		$(".accounts_view ").css("right", "-350px");
-		$(".body_overlay").removeClass("show_overlay")
+		$(".body_overlay").removeClass("show_overlay");
+	
     })
-
+	//  close all dropdowns on click out side
+	$(".body_overlay").click(function(){
+		$(".custom_content").removeClass("showcontent")
+		$(".body_overlay").removeClass("show_overlay")
+		$(".wishlist-view").removeClass("hideIcons")
+		$(".compare-view").removeClass("hideIcons")
+		$(".account-view").removeClass("hideIcons")
+		$(".shopping-cart").removeClass("hideIcons")
+		$(".header .mid_header .mid_header-content .icons i").removeClass("whiteColor")
+		$(".accounts_view").css("right","-350px")
+	})
 });
 
 // main slider
@@ -305,13 +316,10 @@ $(document).ready(function() {
 		$('.tab ul.tabs li a').click(function (g) { 
 			var tab = $(this).closest('.tab'), 
 				index = $(this).closest('li').index();
-			
 			tab.find('ul.tabs > li').removeClass('current');
 			$(this).closest('li').addClass('current');
-			
 			tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
 			tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
-			
 			g.preventDefault();
 		} );
 	})(jQuery);
