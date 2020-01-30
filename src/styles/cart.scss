@@ -1,5 +1,53 @@
 @import "../styles/variables.scss";
 
+
+
+.cart_view {
+  margin-bottom: 25px;
+  padding: 0 10px;
+
+  @media (max-width:340px) and (min-width:200px) {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+
+  @media (max-width:768px) and (min-width:340.1px) {
+    max-width: 50%;
+    flex-basis: 50%;
+    padding: 0 7px;
+  }
+
+  @media (max-width:991.99px) and (min-width:768.99px) {
+    max-width: 33.33%;
+    flex-basis: 33.33%;
+  }
+
+  @media (min-width:992px) {
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+}
+.cart_view2 {
+  margin-bottom: 25px;
+  padding: 0 10px;
+  max-width: 100%;
+  flex-basis: 100%;
+  @media  (min-width:768px) {
+    max-width: 50%;
+    flex-basis: 50%;
+    padding: 0 7px;
+  }
+
+  @media (max-width:991.99px) and (min-width:768.99px) {
+    max-width: 33.33%;
+    flex-basis: 33.33%;
+  }
+
+  @media (min-width:992px) {
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+}
 .cart {
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -18,6 +66,15 @@
 
     img {
       max-height: 250px;
+
+      @media (max-width: 768px) {
+        max-height: 200px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      overflow: hidden;
+      height: 222px;
     }
   }
 
@@ -42,9 +99,7 @@
     align-items: center;
   }
 
-  .cart_img:hover .overlay {
-    width: 100%;
-  }
+
 
   .text {
     color: white;
@@ -75,6 +130,10 @@
       h3 {
         font-weight: 600;
         text-transform: capitalize;
+
+        @media (max-width :768px) {
+          font-size: 15px;
+        }
       }
     }
 
@@ -83,6 +142,10 @@
       font-weight: 700;
       font-size: 20px;
       margin-bottom: 5px;
+
+      @media (max-width :768px) {
+        font-size: 15px;
+      }
     }
 
     .prdouct-variant {
@@ -175,6 +238,14 @@
       &:first-of-type {
         margin: 0;
       }
+
+      @media (max-width: 768px) {
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      margin-top: 5px;
     }
   }
 
@@ -183,6 +254,10 @@
       opacity: 1;
       visibility: visible;
       right: 8px;
+    }
+
+    .cart_img .overlay {
+      width: 100%;
     }
   }
 }

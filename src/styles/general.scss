@@ -157,8 +157,15 @@ label {
       background-color: $white;
       font-size: 30px;
       text-transform: capitalize;
-      font-weight: 700;
-    }
+	  font-weight: 700;
+	  @media (max-width: 768px) {
+		  font-size: 22px;
+	  }
+	}
+	@media (max-width: 768px) {
+		margin: 0 auto;
+		max-width: 100%;
+	}
   }
 
 // body overlay
