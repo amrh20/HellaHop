@@ -1,9 +1,9 @@
 @import "../styles/variables.scss";
 .hideIcons {
   opacity: 0 !important;
+  visibility: hidden;
 }
 .header {
-
   // start top header
   .top_header {
     background-color: $main-color;
@@ -25,7 +25,14 @@
             cursor: pointer;
             width: fit-content;
             text-transform: capitalize;
-
+             span {
+              -webkit-touch-callout: none; /* iOS Safari */
+               -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */ 
+                -moz-user-select: none; /* Old versions of Firefox */ 
+                -ms-user-select: none; /* Internet Explorer/Edge */ 
+                user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+             }
             .top_header-dropdown-content {
               background-color: $white;
               position: absolute;
@@ -37,12 +44,16 @@
               opacity: 0;
               visibility: hidden;
               transition: all 0.3s ease-in-out;
-
+              z-index: 2;
               ul {
                 li {
                   padding: 10px;
                   cursor: pointer;
-
+                  -webkit-touch-callout: none; /* iOS Safari */ 
+                  -webkit-user-select: none; /* Safari */ 
+                  -khtml-user-select: none; /* Konqueror HTML */ 
+                  -moz-user-select: none; /* Old versions of Firefox */ 
+                  -ms-user-select: none; /* Internet Explorer/Edge */ user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
                   &:first-of-type {
                     padding-bottom: 0;
                   }
@@ -85,12 +96,20 @@
         img {
           max-height: 60px;
         }
+        @media (max-width: 768px) {
+          display: none;
+        }
       }
-
+      //  menu bar 
+      .menu_bar {
+        display: block;
+        @media (min-width:768px) {
+          display: none;
+        }
+      }
       // search
       .search {
         position: relative;
-
         input {
           border: 1px solid #f1f3f5;
           border-radius: 20px;
@@ -107,6 +126,9 @@
           transform: translateY(-50%);
           color: #8c9196;
         }
+        @media (max-width: 992px) {
+          display: none;
+        }
       }
 
       // icons
@@ -122,7 +144,7 @@
           }
         }
         .whiteColor {
-         color: #fff;
+          color: #fff;
         }
         // shopping cart view
         .shopping-cart {
@@ -138,27 +160,44 @@
             }
 
             .product_details {
-              margin: 0 15px;
-
+              margin: 0 10px;
               .product_name {
                 font-weight: 700;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 max-width: 170px;
+                @media (max-width: 500px) {
+                  font-size: 14px;
+                  max-width: 220px;
+                }
               }
 
               .product_price {
                 text-transform: uppercase;
                 color: $main-color;
+                @media (max-width: 500px) {
+                  font-size: 14px;
+                }
               }
             }
 
             .delete_product {
               i {
                 color: red;
-                font-size: 14px;
+                box-shadow: 0 2px 5px rgba(0,0,0,.2);
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                background-color: #fff;
+                font-size: 13px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
               }
+            }
+            @media (max-width: 500px) {
+              margin-bottom: 15px;
             }
           }
 
@@ -197,6 +236,9 @@
               }
             }
           }
+          @media (max-width: 500px) {
+            position: unset;
+          }
         }
 
         // wishlist veiw
@@ -215,7 +257,7 @@
             margin-bottom: 20px;
 
             &:not(:first-of-type) {
-              border-top: 1px solid rgba(0, 0, 0, .15);
+              border-top: 1px solid rgba(0, 0, 0, 0.15);
               padding-top: 20px;
             }
           }
@@ -250,7 +292,6 @@
                 align-items: center;
               }
             }
-
           }
 
           .wishlist_btn {
@@ -261,6 +302,9 @@
               font-size: 14px;
               padding: 5px 15px;
             }
+          }
+          @media (max-width: 500px) {
+            position: unset;
           }
         }
 
@@ -286,17 +330,53 @@
               text-overflow: ellipsis;
               white-space: nowrap;
               max-width: 150px;
+              @media (max-width: 500px) {
+                max-width: 220px;
+              }
+            }
+            @media (max-width: 500px) {
+              display: block;
+              overflow: auto;
+              max-height: 400px;
             }
           }
 
           .compare-view_col {
             padding-left: 20px;
             padding-right: 20px;
-            border-right: 1px solid rgba(0, 0, 0, .15);
-
+            border-right: 1px solid rgba(0, 0, 0, 0.15);
+            position: relative;
             &:last-of-type {
               border: 0;
             }
+            .delete_compare-product {
+              position: absolute;
+              top: -5px;
+              right: 12px;
+              i {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: red;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                background-color: #fff;
+                font-size: 12px;
+              }
+              @media (max-width: 500px) {
+                top: 22px;
+              }
+            }
+            @media (max-width: 500px) {
+              border-right: 0;
+              border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+              padding: 15px;
+            }
+          }
+          @media (max-width: 500px) {
+            position: unset;
           }
         }
 
@@ -309,17 +389,24 @@
           button {
             font-size: 14px;
           }
+          @media (max-width: 500px) {
+            margin-top: 0;
+            border-top: 2px solid #ededed;
+            padding-top: 15px;
+            margin-bottom: 15px;
+          }
         }
-
-
+        @media (max-width: 992px) {
+          margin-top: 12px;
+          position: unset;
+        }
       }
-     
     }
   }
 
-  // custom views 
+  // custom views
   .custom-overlay {
-    border-color: #e38888 transparent;
+    border-color: $main-color transparent;
     border-style: solid;
     border-width: 0 12px 12px;
     height: 0;
@@ -327,6 +414,9 @@
     top: -12px;
     right: 13px;
     position: absolute;
+    @media (max-width: 500px) {
+      display: none;
+    }
   }
 
   .custom_content {
@@ -351,14 +441,34 @@
     &.showcontent {
       opacity: 1;
       visibility: visible;
-      top: 50px;
+      top: 26px;
+      @media (max-width: 500px) {
+        top: 96px;
+      }
+    }
+    @media (max-width: 500px) {
+      right: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 300px;
+      top: 68px;
+      padding: 0;
+      transition: all .3s ease-in-out;
     }
   }
-
+  .shopping-cart_content {
+    @media (max-width: 500px) {
+      top: 100px;
+      padding: 15px;
+    }
+  }
   .custom_row {
     padding-bottom: 5px;
     display: flex;
     align-items: center;
+    @media (max-width: 500px) {
+      position: relative;
+    }
   }
 
   .custom_details {
@@ -387,20 +497,19 @@
   }
 }
 
-// accounts view 
+// accounts view
 .account-view {
   position: relative;
   top: -3px;
 }
 
 .accounts_view {
-  z-index: 2;
-  position: absolute;
+  z-index: 222222;
+  position: fixed;
   right: -350px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, .17);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.17);
   top: 0;
-  transition: all .3s ease-in-out;
-
+  transition: all 0.3s ease-in-out;
   .accounts_view-title {
     color: #777;
     display: block;
@@ -413,6 +522,9 @@
     i {
       cursor: pointer;
     }
+    @media (max-width: 500px) {
+      padding: 10px;
+    }
   }
 
   .accounts_view-content {
@@ -421,12 +533,14 @@
     padding: 43px 32px 37px 34px;
     // background-color: #f8f8f8;
     background-color: #fff;
+    @media (max-width: 500px) {
+      padding: 15px;
+    }
   }
 
   // start sign_in
   .sign_in {
     margin-bottom: 50px;
-
     .sign_in-title {
       h4 {
         font-size: 22px;
@@ -437,7 +551,6 @@
         font-size: 14px;
       }
     }
-
     .sign_in-iputs {
       margin-top: 20px;
     }
@@ -481,13 +594,13 @@
       }
 
       /* On mouse-over, add a grey background color */
-      .test:hover input~.checkmark {
+      .test:hover input ~ .checkmark {
         background-color: #ccc;
       }
 
       /* When the checkbox is checked, add a blue background */
-      .test input:checked~.checkmark {
-        background-color: #2196F3;
+      .test input:checked ~ .checkmark {
+        background-color: #2196f3;
       }
 
       /* Create the checkmark/indicator (hidden when not checked) */
@@ -498,7 +611,7 @@
       }
 
       /* Show the checkmark when checked */
-      .test input:checked~.checkmark:after {
+      .test input:checked ~ .checkmark:after {
         display: block;
       }
 
@@ -515,19 +628,25 @@
         transform: rotate(45deg);
       }
     }
-
     .sign_in-btn {
       margin-top: 20px;
+      @media (max-width: 500px) {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 15px;
+      }
+    }
+    @media (max-width: 500px) {
+      margin-bottom: 10px;
     }
   }
 
-  //  or 
+  //  or
   .or {
     display: flex;
     justify-content: center;
     text-transform: uppercase;
     position: relative;
-
     span {
       border: 1px solid;
       border-radius: 50%;
@@ -547,6 +666,10 @@
       width: 154px;
       position: absolute;
       background-color: #808080;
+      @media (max-width: 500px) {
+        left: -15px;
+        width: 120px!important;
+      }
     }
 
     &::before {
@@ -557,27 +680,38 @@
       width: 154px;
       position: absolute;
       background-color: #808080;
+      @media (max-width: 500px) {
+        width: 139px;
+      }
     }
   }
 
   .signup {
     margin-top: 25px;
-
     .signup-title {
       margin-bottom: 25px;
-
       h3 {
         text-transform: uppercase;
         font-weight: 600;
       }
-
       p {
         font-size: 14px;
+      }
+      @media (max-width: 768px) {
+        margin-bottom: 15px;
       }
     }
 
     .signup-btn {
       margin-top: 20px;
+      @media (max-width: 500px) {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+    @media (max-width: 500px) {
+      margin-top: 13px;
     }
   }
 
@@ -592,8 +726,13 @@
     border-radius: 30px;
     display: block;
     min-width: 280px;
+    @media (max-width: 500px) {
+      min-width: 250px;
+    }
   }
-
+  @media (max-width: 400px) {
+    max-width: 300px;
+  }
 }
 
 .input_ckeckbox {
@@ -636,16 +775,19 @@
         > div {
           opacity: 1;
           visibility: visible;
-          top: 54px
+          top: 54px;
         }
       }
     }
+  }
+  @media (max-width: 992px) {
+    display: none;
   }
 }
 
 // box shadow
 .box-shadow {
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, .17);
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.17);
 }
 
 // mega menu
@@ -661,7 +803,7 @@
   padding: 20px;
   opacity: 0;
   visibility: hidden;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   max-height: 400px;
   overflow: auto;
 
@@ -711,12 +853,12 @@
     }
   }
 
-  @media (min-width: 768px) and (max-width : 991.99px) {
+  @media (min-width: 768px) and (max-width: 991.99px) {
     max-width: 540px;
     margin: 0 auto;
   }
 
-  @media (min-width: 992px) and (max-width:1199.99px) {
+  @media (min-width: 992px) and (max-width: 1199.99px) {
     max-width: 960px;
     margin: 0 auto;
   }
@@ -743,7 +885,7 @@
   position: relative;
   &:hover {
     > div {
-      top : 39px;
+      top: 39px;
       visibility: visible;
       opacity: 1;
     }
@@ -760,7 +902,7 @@
   top: 9px;
   opacity: 0;
   visibility: hidden;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   ul {
     display: block;
 
@@ -772,50 +914,50 @@
       align-items: center;
       justify-content: space-between;
       position: relative;
-      transition: all .3s ease-in-out;
+      transition: all 0.3s ease-in-out;
       &:last-of-type {
         margin-bottom: 0;
       }
+      &:hover {
+        // color: $main-color;
+        margin-left: 5px;
+      }
+    }
+  }
+  .dropdown_one-childern {
+    position: absolute;
+    left: 100%;
+    box-shadow: 0 1px 2px 1px #999;
+    list-style-type: none;
+    background: $white;
+    z-index: 999;
+    top: 30px;
+    margin-left: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    width: auto;
+    padding-right: 10px;
+    white-space: nowrap;
+    ul {
+      li {
+        margin-left: 15px;
+        margin-top: 15px;
+        &:last-of-type {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  .link_childern {
     &:hover {
-      // color: $main-color;
-      margin-left: 5px;
-    }
-    }
-  }
-.dropdown_one-childern {
-  position: absolute;
-  left: 100%;
-  box-shadow: 0 1px 2px 1px #999;
-  list-style-type: none;
-  background: $white;
-  z-index: 999;
-  top: 30px;
-  margin-left: 20px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all .3s ease-in-out;
-  width: auto;
-  padding-right: 10px;
-  white-space: nowrap;
-  ul {
-    li {
-    margin-left: 15px;
-    margin-top: 15px;
-    &:last-of-type {
-      margin-bottom: 15px;
-    }
+      .dropdown_one-childern {
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
-}
-.link_childern {
- &:hover {
-   .dropdown_one-childern {
-     top: 0;
-     opacity: 1;
-     visibility: visible;
-   }
- }
-}
 }
 
 .traingle_overflow-dropdwon {
@@ -828,3 +970,15 @@
   right: 18px;
   position: absolute;
 }
+
+
+
+
+
+
+
+
+
+
+
+
