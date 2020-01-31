@@ -19,8 +19,14 @@ url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/city--5-min-min.jpg') c
 
 .cont {
 	position: relative;
-	height: 100vh;
+	height: calc(100vh - 190px);
 	overflow: hidden;
+	@media (min-width: 768px) and (max-width: 992px) {
+		height: calc(100vh - 160px);
+	}
+	@media (max-width: 767.99px) {
+		height: calc(100vh - 150px);
+	}
 }
 .main_slider {
     z-index: 1;
