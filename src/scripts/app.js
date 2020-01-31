@@ -99,6 +99,31 @@ $(document).ready(function () {
 		$(".header .mid_header .mid_header-content .icons i").removeClass("whiteColor")
 		$(".accounts_view").css("right","-350px")
 	})
+	// side side menu  
+	$(".menu-btn").click(function(){
+		$(".side_menu").toggleClass("view_side-menu")
+		$(".body_overlay").addClass("show_overlay");
+		$(".wrapper_content").toggleClass("act")
+		$(this).toggleClass("opactiy_zero")
+	})
+	// close side menu
+	$(".body_overlay").click(function(){
+		$(".side_menu").removeClass("view_side-menu");
+		$(".wrapper_content").removeClass("act");
+		$(".menu-btn").removeClass("opactiy_zero")
+		$(".childern").removeClass("showchildern");
+	})
+	$(".close_sidemenu").click(function(){
+		$(".side_menu").removeClass("view_side-menu");
+		$(".wrapper_content").removeClass("act");
+		$(".menu-btn").toggleClass("opactiy_zero");
+		$(".body_overlay").removeClass("show_overlay");
+	})
+	// show childern at side menu
+	$("ul.categories li i").click(function(){
+		console.log("test")
+		$("div").toggleClass("showchildern")
+	})
 });
 
 // main slider
@@ -318,10 +343,13 @@ $(document).ready(function() {
 				index = $(this).closest('li').index();
 			tab.find('ul.tabs > li').removeClass('current');
 			$(this).closest('li').addClass('current');
-			tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
+			tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').toggleClass("d___flex").slideUp()
 			tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
 			g.preventDefault();
 		} );
 	})(jQuery);
 
 });
+
+
+
