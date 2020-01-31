@@ -441,7 +441,7 @@
     &.showcontent {
       opacity: 1;
       visibility: visible;
-      top: 26px;
+      top: 54px;
       @media (max-width: 500px) {
         top: 96px;
       }
@@ -506,6 +506,7 @@
 .accounts_view {
   z-index: 222222;
   position: fixed;
+  min-height: 100vh;
   right: -350px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.17);
   top: 0;
