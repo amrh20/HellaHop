@@ -7,14 +7,14 @@
   
   .menu-btn:before,
   .menu-btn:after {
-    background-color: $icons-color;
+    background-color: #fff;
     content: '';
     display: block;
     height: 3px;
     transition: all 200ms ease-in-out;
   }
   .menu-btn:before {
-    box-shadow: 0 10px 0 $icons-color;
+    box-shadow: 0 10px 0 #fff;
     margin-bottom: 16px;
   }
 //   .menu-btn:hover:before {
@@ -51,7 +51,8 @@
         border-radius: 50%;
         cursor: pointer;
     }
-    .side_menu-content {     
+    .side_menu-content { 
+      margin-top: 85px;    
         .logo {
             margin: 35px 0;
             text-align: center;
