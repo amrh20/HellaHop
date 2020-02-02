@@ -249,7 +249,13 @@ label {
 		max-width: 100%;
 	}
   }
-
+ //  menu bar 
+ .menu_bar {
+  display: block;
+  @media (min-width:768px) {
+    display: none;
+  }
+}
 // body overlay
 .body_overlay {
     position: absolute;
@@ -266,7 +272,7 @@ label {
     transition: all .3s ease-in-out;
 }
 .show_overlay {
-    opacity: .7;
+    opacity: .8;
 	visibility: visible
 }
 .hideIcons {

@@ -329,11 +329,7 @@ $(document).on('mousewheel DOMMouseScroll', function (e) {
 // }
 
 
-
-
-
 $(document).ready(function () {
-
 	// tabs
 	(function ($) {
 		$('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
@@ -361,16 +357,16 @@ $('.slider-for').slick({
 	arrows: false,
 	fade: true,
 	asNavFor: '.slider-nav',
-	speed: 500
+	speed: 600
 });
 $('.slider-nav').slick({
-	slidesToShow: 3,
+	slidesToShow: 4,
 	slidesToScroll: 1,
 	asNavFor: '.slider-for',
 	dots: false,
 	centerMode: true,
 	focusOnSelect: true,
-	speed: 500
+	speed: 600
 });
 
 //   related products slider
@@ -378,26 +374,45 @@ $('.multiple-items').slick({
 	infinite: true,
 	slidesToShow: 4,
 	slidesToScroll: 1,
-	speed: 300,
+	speed: 600,
 	arrows: true,
 	autoplay: true,
-	dots: true,
+	dots: false,
 	responsive: [
 		{
 		  breakpoint: 768,
 		  settings: {
-			slidesToShow: 2,
+			slidesToShow: 1,
 			slidesToScroll: 1,
-		  }
+		  },
 		},
+		{
+			breakpoint: 992,
+			settings: {
+			  slidesToShow: 2,
+			  slidesToScroll: 1,
+			},
+		  },
 		{
 		  breakpoint: 992,
 		  settings: {
 			slidesToShow: 3,
-			slidesToScroll: 1
+			slidesToScroll: 1,
 		  }
 		},
-	
-
 	  ]
 });
+
+
+// prevent a href from product home page
+
+  function myFunction(x) {
+	if (x.matches) { // If media query matches
+		$(".prevent_click_mobile").on("click", function(event) {
+			event.preventDefault();
+		  });
+	} 
+  }
+  var x = window.matchMedia("(max-width: 768px)")
+  myFunction(x) // Call listener function at run time
+  x.addListener(myFunction) // Attach listener function on state changes
