@@ -439,9 +439,9 @@
     &.showcontent {
       opacity: 1;
       visibility: visible;
-      top: 54px;
+      top: 46px;
       @media (max-width: 500px) {
-        top: 96px;
+        top: 112px;
       }
     }
     @media (max-width: 500px) {
