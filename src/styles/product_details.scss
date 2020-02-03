@@ -4,7 +4,7 @@
   overflow: hidden;
   position: relative;
   .product_content {
-    background-color: #f7f7f7;
+    background-color: $inner_pages_bk;
     padding-top: 10px;
 
     .product_details {
@@ -141,35 +141,6 @@
       margin-right: 18px;
       font-weight: 700;
       font-size: 20px;
-    }
-
-    .qty_input {
-      display: flex;
-      align-items: center;
-      position: relative;
-      width: fit-content;
-      input {
-        text-align: center;
-        border: 1px solid;
-        border-color: #dadada;
-        background-color: #fff;
-        height: 40px;
-        width: 180px;
-      }
-
-      i {
-        position: absolute;
-        font-size: 12px;
-        cursor: pointer;
-      }
-
-      .fa-plus {
-        right: 7px;
-      }
-
-      .fa-minus {
-        left: 10px;
-      }
     }
 
   }
