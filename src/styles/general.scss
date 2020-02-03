@@ -256,6 +256,35 @@ label {
     display: none;
   }
 }
+// quantatiy input 
+.qty_input {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+  input {
+    text-align: center;
+    border: 1px solid;
+    border-color: #dadada;
+    background-color: #fff;
+    height: 40px;
+    width: 180px;
+  }
+
+  i {
+    position: absolute;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .fa-plus {
+    right: 7px;
+  }
+
+  .fa-minus {
+    left: 10px;
+  }
+}
 // body overlay
 .body_overlay {
     position: absolute;
