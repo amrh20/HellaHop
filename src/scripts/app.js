@@ -416,3 +416,8 @@ $('.multiple-items').slick({
   var x = window.matchMedia("(max-width: 768px)")
   myFunction(x) // Call listener function at run time
   x.addListener(myFunction) // Attach listener function on state changes
+
+//   delete cart at cart page
+// $(".remove_product").click(function(){
+//   $(".cart_widget").addClass("hide_cart_widget")
+// })
