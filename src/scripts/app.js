@@ -417,7 +417,8 @@ $('.multiple-items').slick({
   myFunction(x) // Call listener function at run time
   x.addListener(myFunction) // Attach listener function on state changes
 
-//   delete cart at cart page
-// $(".remove_product").click(function(){
-//   $(".cart_widget").addClass("hide_cart_widget")
-// })
+
+// apply coupon at cart page
+$('.apply_btn').on('click', function() {
+	$(this).toggleClass('active');
+  })
