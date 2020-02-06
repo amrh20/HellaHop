@@ -1,239 +1,179 @@
-$bgClr: rgba(#0b0f27, .83);
-$txtClr: #fff;
-$animSpd: 750 * 1ms; // Change also in JS
+$numOfSlides: 5;
+$slidingAT: 1.3s;
+$controlSize: 60px;
 
-$numOfSlides: 5; // Add new city in the array in JS and a new image below
+.slider {
+  position: relative;
+  height: 100vh;
 
-$bgPics: (
-url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/city--1-min-min.jpg') center center no-repeat,
-url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/city--2-min-min.jpg') center center no-repeat,	url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/city--3-min-min.jpg') center center no-repeat,
-url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/city--4-min-min.jpg') center center no-repeat,
-url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/city--5-min-min.jpg') center center no-repeat
-);
+  &__slides {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+  }
 
-@mixin mediaMaxW($width) {
-  @media screen and (max-width: $width) {
-    @content;
+  &__control {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: $controlSize;
+    height: $controlSize;
+    margin-left: $controlSize/-2;
+    margin-top: $controlSize/-2;
+    border-radius: 50%;
+    background: #fff;
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+    &--right {
+      left: 95%;
+    }
+    
+    &:hover {
+      background-color: #2da6ff;
+    }
+
+    &-line {
+      position: absolute;
+      left: 23px;
+      top: 50%;
+      width: 3px;
+      height: 14px;
+      transform-origin: 50% 0;
+      transform: rotate(-45deg);
+
+      &:nth-child(2) {
+        transform: translateY(1px) rotate(-135deg);
+      }
+
+      .slider__control--right & {
+        left: 37px;
+        transform-origin: 1px 0;
+        transform: rotate(45deg);
+
+        &:nth-child(2) {
+          transform: translateY(1px) rotate(135deg);
+        }
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #e2e2e2;
+        transition: background-color 0.3s;
+      }
+
+      .slider__control:hover &:after {
+        background-color: #fff;
+      }
+
+      .slider__control.a--rotation & {
+
+        &:after {
+          animation: arrowLineRotation 0.49s;
+        }
+
+        &:nth-child(1):after {
+          animation: arrowLineRotationRev 0.49s;
+        }
+      }
+    }
   }
 }
 
-.cont {
-	position: relative;
-	height: calc(100vh - 190px);
-	overflow: hidden;
-	@media (min-width: 768px) and (max-width: 992px) {
-		height: calc(100vh - 160px);
-	}
-	@media (max-width: 767.99px) {
-		height: calc(100vh - 150px);
-	}
+@keyframes arrowLineRotation {
+  to {
+    transform: rotate(180deg);
+  }
 }
-.main_slider {
-    z-index: 1;
-}
-.slider {
-	position: relative;
-	height: 100%;
-	transform: translate3d(0, 0, 0);
-	will-change: transform;
-	cursor: all-scroll;
-	user-select: none;
 
-	&.animation {
-		transition: transform $animSpd ease-in-out;
-
-		.slide__darkbg {
-			transition: transform $animSpd ease-in-out;
-		}
-		
-		.slide__text {
-			transition: transform $animSpd ease-in-out;
-		}
-		
-		.slide__letter {
-			transition: transform $animSpd ease-in-out;
-		}
-	}
+@keyframes arrowLineRotationRev {
+  to {
+    transform: rotate(-180deg);
+  }
 }
 
 .slide {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	
-	@for $i from 1 through $numOfSlides {
-		&--#{$i} {
-			left: 100% * ($i - 1);
-		}
-	}
-	
-	&__darkbg {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		transform: translate3d(0, 0, 0);
-		will-change: transform;
-		z-index: 10;
-	}
-	
-	&__text-wrapper {
-		position: absolute;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 100%;
-		height: 100%;
-		z-index: 15;
-	}
-	
-	&__letter {
-		position: absolute;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		transform: translate3d(0, 0, 0);
-		-webkit-text-fill-color: transparent !important;
-		-webkit-background-clip: text !important;
-		font: {
-			size: 50vw;;
-			weight: 800;
-		}
-		color: #000;
-		z-index: 2;
-		will-change: transform;
-		user-select: none;
-	}
-	
-	&__text {
-		font: {
-			size: 8vw;
-			weight: 800;
-		}
-		text-transform: uppercase;
-		transform: translate3d(0, 0, 0);
-		letter-spacing: 12px;
-		color: $txtClr;
-		will-change: transform;
-		user-select: none;
-	}
-	&__text:nth-child(odd) {
-		z-index: 2;
-	}
-	&__text:nth-child(even) {
-		z-index: 1;
-	}
-		
-	@each $item in $bgPics {
-		$i: index($bgPics, $item);
-		&--#{$i} {
-			&__darkbg {
-				left: -50% * ($i - 1);
-				background: $item;
-				background-size: cover;
-				background-position: 0px center, 0px center;
-				transform: translate3d(0, 0, 0);
-				will-change: transform;
-				&:after {
-					content: '';
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 100%;
-					background-color: $bgClr;
-				}
-			}
-			&__letter {
-				background: $item;
-				background-position: 0px center, 0px center;
-				background-size: cover;
-			}
-		}
-	}
-}
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 150vmax;
+  height: 150vmax;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: clip-path 0s $slidingAT*0.7;
+  clip-path: circle($controlSize/2 at 120vw 50%);
 
-.nav {
-	position: absolute;
-	bottom: 25px;
-	left: 50%;
-	transform: translateX(-50%);
-	list-style-type: none;
-	z-index: 10;
-	
-	&__slide {
-		position: relative;
-		display: inline-block;
-		width: 28px;
-		height: 28px;
-		border-radius: 50%;
-		border: 2px solid #fff;
-		margin-left: 10px;
-		cursor: pointer;
-		@include mediaMaxW(400px) {
-			width: 22px;
-			height: 22px;
-		}
-		&:hover:after {
-			transform: translate(-50%, -50%) scale(1,1);
-			opacity: 1;
-		}
-		
-		&:after {
-			content: '';
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%) scale(0,0);
-			width: 75%;
-			height: 75%;
-			border-radius: 50%;
-			background-color: #fff;
-			opacity: 0;
-			transition: 300ms;
-		}
-		
-		&--1 {
-			margin-left: 0;
-		}
-	}
-}
+  &.s--prev {
+    clip-path: circle($controlSize/2 at 30vw 50%);
+  }
 
-.nav-active {
-	&:after {
-		transform: translate(-50%, -50%) scale(1,1);
-		opacity: 1;
-	}
-}
+  &.s--active {
+    z-index: 1;
+    transition: clip-path $slidingAT;
+    clip-path: circle(120vmax at 120vw 50%);
+    
+    &.s--active-prev {
+      clip-path: circle(120vmax at 30vw 50%);
+    }
+  }
 
-.side-nav {
-	position: absolute;
-	width: 10%;
-	height: 100%;
-	top: 0;
-	z-index: 20;
-	cursor: pointer;
-	opacity: 0;
-	transition: 300ms;
-	
-	&:hover {
-		opacity: .1;
-	}
-	
-	&--right {
-		right: 0;
-		background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgb(238, 215, 255) 100%);
-	}
-	&--left {
-		left: 0;
-		background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgb(238, 215, 255) 100%);
-	}
-}
+  @for $i from 1 through $numOfSlides {
+    &:nth-child(#{$i}) {
+      .slide__inner {
+        background-image: url('../images/onepgscr-#{$i+1}.jpg');
+      }
+    }
+  }
 
+  &__inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100vw;
+    height: 100vh;
+    margin-left: -50vw;
+    margin-top: -50vh;
+    background-size: cover;
+    background-position: center center;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+    }
+  }
+
+  &__content {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    margin-left: $controlSize/-2;
+    margin-top: $controlSize*0.8;
+    max-width: 480px;
+    color: #fff;
+  }
+
+  &__heading {
+    margin-bottom: 20px;
+    font-size: 60px;
+  }
+
+  &__text {
+    font-size: 25px;
+
+    a {
+      color: inherit;
+    }
+  }
+}

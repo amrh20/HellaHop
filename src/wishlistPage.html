@@ -25,7 +25,7 @@
 <body>
 
 
-  <div class="cart_wrapper">
+  <div class="wishlist_wrapper">
     <div class="body_overlay"></div>
     <header>
       <div class="header">
@@ -685,195 +685,225 @@
 
           </div>
         </div>
-
         <!-- end middle haeder -->
       </div>
     </header><!-- end header -->
 
     <!-- product content -->
-    <div class="cart_content">
+    <div class="wishlist_widget">
+
       <div class="container">
-        <!-- cart content title-->
         <div class="tittle_innerpage">
-          <h2>cart</h2>
+          <h2>wishlist</h2>
           <p>( 3 ) product/s</p>
         </div>
-        <div class="cart_content-details">
-          <div class="cartView_wrapper">
-            <div class="cart_widget">
-              <div class="cart_details">
-                <div class="cart_head-wrapper">
-                  <div class="product_img">
-                    <img src="./images/dress.png" alt="dress">
-                  </div>
-                  <div class="cart_head-content">
-                    <div class="product_name">
-                      <a>product name</a>
-                      <p>category name</p>
+        <div class="wishList">
+          <!-- start wishlist container -->
+          <div class="wishList__container">
+            <!-- start wish list head -->
+            <table>
+              <thead>
+                <tr>
+                  <th>image</th>
+                  <th>product description</th>
+                  <th>quantity</th>
+                  <th>stock</th>
+                  <th>add to Cart</th>
+                  <th>delete</th>
+                </tr>
+              </thead>
+              <!-- static content -->
+              <tbody class="wishList-content">
+                <tr>
+                  <!-- product image -->
+                  <td>
+                    <div class="product-img">
+                      <img src="./images/dress.png" alt="dress">
                     </div>
-                    <div class="product_price">
-                      <div class="original_price">
-                        999.00 $
+                  </td>
+                  <!-- product name -->
+                  <td>
+                    <div class="product_description">
+                      <a href="#" class="product_name">dress</a>
+                      <div class="product_price">
+                        <span class="current-price">
+                          500.00 $
+                        </span>
+                        <span class="original-price">
+                          1000.00 $
+                        </span>
                       </div>
-                      <div class="new_price">
-                        333.00 $
-                      </div>
+                     
                     </div>
-                  </div>
-  
-                </div>
-                <div class="cart_count">
-                  <div class="qty_input">
-                    <input type="text" name="" id="" placeholder="" value="1">
-                    <i class="fas fa-plus"></i>
-                    <i class="fas fa-minus"></i>
-                  </div>
-                  <div class="cart_total">
-                    <p>total : <span>2200.00 $</span></p>
-                  </div>
-                </div>
-              </div>
-              <div class="add_to_wishlist">
-                <button>add to wishlist</button>
-              </div>
-              <div class="remove_product">
-                <i class="fa fa-times"></i>
-              </div>
-            </div>
-            <div class="cart_widget">
-              <div class="cart_details">
-                <div class="cart_head-wrapper">
-                  <div class="product_img">
-                    <img src="./images/dress.png" alt="dress">
-                  </div>
-                  <div class="cart_head-content">
-                    <div class="product_name">
-                      <a>product name</a>
-                      <p>category name</p>
-                    </div>
-                    <div class="product_price">
-                      <div class="original_price">
-                        999.00 $
-                      </div>
-                      <div class="new_price">
-                        333.00 $
+                  </td>
+                  <td>
+                    <!-- product price -->
+                    <div class="product-qty">
+                      <div class="qty_input">
+                        <input type="text" name="" id="" placeholder="" value="1">
+                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-minus"></i>
                       </div>
                     </div>
-                  </div>
-  
-                </div>
-                <div class="cart_count">
-                  <div class="qty_input">
-                    <input type="text" name="" id="" placeholder="" value="1">
-                    <i class="fas fa-plus"></i>
-                    <i class="fas fa-minus"></i>
-                  </div>
-                  <div class="cart_total">
-                    <p>total : <span>2200.00 $</span></p>
-                  </div>
-                </div>
-              </div>
-              <div class="add_to_wishlist">
-                <button>add to wishlist</button>
-              </div>
-              <div class="remove_product">
-                <i class="fa fa-times"></i>
-              </div>
-            </div>
-            <div class="cart_widget">
-              <div class="cart_details">
-                <div class="cart_head-wrapper">
-                  <div class="product_img">
-                    <img src="./images/dress.png" alt="dress">
-                  </div>
-                  <div class="cart_head-content">
-                    <div class="product_name">
-                      <a>product name</a>
-                      <p>category name</p>
+                  </td>
+                  <td>
+                    <!-- product status -->
+                    <div class="product-status">
+                      <span class="text-success">in stock</span>
                     </div>
-                    <div class="product_price">
-                      <div class="original_price">
-                        999.00 $
+                  </td>
+                  <td>
+                    <!-- product action -->
+                    <div class="product-actions">
+
+                      <button class="">
+                        move to cart
+                        <i class="fa fa-shopping-cart"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>
+                    <!-- remove product -->
+                    <div class="product-remove">
+                      <button class="btn-remove">
+                        <i class="fa fa-trash-alt"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+              <tbody class="wishList-content">
+                <tr>
+                  <!-- product image -->
+                  <td>
+                    <div class="product-img">
+                      <img src="./images/dress.png" alt="dress">
+                    </div>
+                  </td>
+                  <!-- product name -->
+                  <td>
+                    <div class="product_description">
+                      <a href="#" class="product_name">dress</a>
+                      <div class="product_price">
+                        <span class="current-price">
+                          500.00 $
+                        </span>
+                        <span class="original-price">
+                          1000.00 $
+                        </span>
                       </div>
-                      <div class="new_price">
-                        333.00 $
+                     
+                    </div>
+                  </td>
+                  <td>
+                    <!-- product price -->
+                    <div class="product-qty">
+                      <div class="qty_input">
+                        <input type="text" name="" id="" placeholder="" value="1">
+                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-minus"></i>
                       </div>
                     </div>
-                  </div>
-  
-                </div>
-                <div class="cart_count">
-                  <div class="qty_input">
-                    <input type="text" name="" id="" placeholder="" value="1">
-                    <i class="fas fa-plus"></i>
-                    <i class="fas fa-minus"></i>
-                  </div>
-                  <div class="cart_total">
-                    <p>total : <span>2200.00 $</span></p>
-                  </div>
-                </div>
-              </div>
-              <div class="add_to_wishlist">
-                <button>add to wishlist</button>
-              </div>
-              <div class="remove_product">
-                <i class="fa fa-times"></i>
-              </div>
-            </div>
-            <div class="cartView_btns">
-              <div class="continue_shipping">
-                <button class="temp_button">continue shipping</button>
-              </div>
-              <div class="clear_update">
-                <button class="temp_button">update cart</button>
-                <button class="temp_button">clear cart</button>
-              </div>
-            </div>
+                  </td>
+                  <td>
+                    <!-- product status -->
+                    <div class="product-status">
+                      <span class="text-success">in stock</span>
+                    </div>
+                  </td>
+                  <td>
+                    <!-- product action -->
+                    <div class="product-actions">
+
+                      <button class="">
+                        move to cart
+                        <i class="fa fa-shopping-cart"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>
+                    <!-- remove product -->
+                    <div class="product-remove">
+                      <button class="btn-remove">
+                        <i class="fa fa-trash-alt"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+              <tbody class="wishList-content">
+                <tr>
+                  <!-- product image -->
+                  <td>
+                    <div class="product-img">
+                      <img src="./images/dress.png" alt="dress">
+                    </div>
+                  </td>
+                  <!-- product name -->
+                  <td>
+                    <div class="product_description">
+                      <a href="#" class="product_name">dress</a>
+                      <div class="product_price">
+                        <span class="current-price">
+                          500.00 $
+                        </span>
+                        <span class="original-price">
+                          1000.00 $
+                        </span>
+                      </div>
+                     
+                    </div>
+                  </td>
+                  <td>
+                    <!-- product price -->
+                    <div class="product-qty">
+                      <div class="qty_input">
+                        <input type="text" name="" id="" placeholder="" value="1">
+                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-minus"></i>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <!-- product status -->
+                    <div class="product-status">
+                      <span class="text-success">in stock</span>
+                    </div>
+                  </td>
+                  <td>
+                    <!-- product action -->
+                    <div class="product-actions">
+
+                      <button class="">
+                        move to cart
+                        <i class="fa fa-shopping-cart"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>
+                    <!-- remove product -->
+                    <div class="product-remove">
+                      <button class="btn-remove">
+                        <i class="fa fa-trash-alt"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+
+            </table>
+           
           </div>
-          
-          <div class="order_summary">
-            <!-- promo code -->
-            <div class="promo_code">
-              <div class="promotion">
-                <form class="promote-form">
-                  <input class="pl-4" type="text" id="coupon-code" formControlName="coupon"
-                    placeholder="promo code">
-                  <button class="apply_btn" type="button">apply</button>
-                </form>
-              </div>
+          <div class="wishlist_btns">
+            <div class="continue_shipping">
+              <button class="temp_button">continue shipping</button>
             </div>
-              <div class="white-box">
-                <div class="white-box-title">
-                  <h2>order summary</h2>
-                </div>
-                <div class="cart-checkout">
-                  <div class="cart-checkout-item">
-                    <span class="">subtotal</span>
-                    <span
-                      class="cart-subtotal">3000.00 $</span>
-                  </div>
-                 
-              
-                
-                  <div class="cart-checkout-item total-item">
-                    <span>totle</span>
-                    <span class="cart-total">3000.00 $</span>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-5">
-                <button class="temp_button w-100">
-                  checkout
-                </button>
-              </div>
-          
-          </div>
-          <!--End white-box-->
+            <div class="clear">
+              <button class="temp_button">clear wishlist</button>
+            </div>
           </div>
         </div>
       </div>
-
-
 
     </div>
 
