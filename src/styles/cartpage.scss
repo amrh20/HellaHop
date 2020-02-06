@@ -6,22 +6,7 @@
   .cart_content {
     padding: 50px 0;
     background-color: $inner_pages_bk;
-    .cart_content-tittle {
-      border-bottom: 1px solid #bcbcbc;
-      padding-bottom: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      h2 {
-        text-transform: capitalize;
-        font-weight: 600;
-        font-size: 35px;
-      }
-      p {
-        font-size: 20px;
-        color: #939393;
-      }
-    }
+  
     // details
     .cart_content-details {
       display: flex;
