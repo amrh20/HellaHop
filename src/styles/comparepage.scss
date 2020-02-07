@@ -188,8 +188,14 @@
                   background-color: $main-color;
                   border: 1px solid $main-color;
                 }
-                @media (max-width: 480px) {
+                @media (max-width: 768px) {
                   font-size: 1.4rem;
+                  height: 27px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin: 0 auto;
+                  padding: 0;
                 }
                 i {
                   background: #fff;
@@ -205,6 +211,15 @@
                   text-align: center;
                   top: 1px;
                   width: 30px;
+                  @media (max-width: 768px) {
+                    height: 25px;
+                    width: 25px;
+                    top: 0;
+                    font-size: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  }
                 }
               }
             }

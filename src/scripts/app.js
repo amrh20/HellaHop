@@ -2,12 +2,6 @@ $(document).ready(function () {
 	// show cart content at header
 	$(".cart-icon_head").click(function () {
 		$(".shopping-cart_content").toggleClass("showcontent");
-		// if ($(".wishlist-view_content").hasClass("showcontent")) {
-		//     $(".wishlist-view_content").removeClass("showcontent")
-		// }
-		// if ($(".compare-view_content").hasClass("showcontent")) {
-		//     $(".compare-view_content").removeClass("showcontent")
-		// }
 		$(".cart-icon_head i").toggleClass("whiteColor");
 		if ($(".wishlist-icon_head i").hasClass("whiteColor")) {
 			$(".wishlist-icon_head i").removeClass("whiteColor")
@@ -24,16 +18,9 @@ $(document).ready(function () {
 	// show wishlist content at header
 	$(".wishlist-icon_head").click(function () {
 		$(".wishlist-view_content").toggleClass("showcontent")
-		// if ($(".shopping-cart_content").hasClass("showcontent")) {
-		//     $(".shopping-cart_content").removeClass("showcontent")
-		// }
-		// if ($(".wishlist-view_content").hasClass("showcontent")) {
-		//     $(".compare-view_content").removeClass("showcontent")
-		// }
 		$(".shopping-cart").toggleClass("hideIcons")
 		$(".compare-view").toggleClass("hideIcons")
 		$(".account-view").toggleClass("hideIcons")
-
 		$(".wishlist-icon_head i").toggleClass("whiteColor")
 		if ($(".cart-icon_head i").hasClass("whiteColor")) {
 			$(".cart-icon_head i").removeClass("whiteColor")
@@ -47,16 +34,9 @@ $(document).ready(function () {
 	// show compare content at header
 	$(".compare-icon_head").click(function () {
 		$(".compare-view_content").toggleClass("showcontent");
-		// if ($(".wishlist-view_content").hasClass("showcontent")) {
-		//     $(".wishlist-view_content").removeClass("showcontent")
-		// }
-		// if ($(".shopping-cart_content").hasClass("showcontent")) {
-		//     $(".shopping-cart_content").removeClass("showcontent")
-		// }
 		$(".shopping-cart").toggleClass("hideIcons")
 		$(".wishlist-view").toggleClass("hideIcons")
 		$(".account-view").toggleClass("hideIcons")
-
 		$(".compare-icon_head i").toggleClass("whiteColor")
 		if ($(".cart-icon_head i").hasClass("whiteColor")) {
 			$(".cart-icon_head i").removeClass("whiteColor")
@@ -98,6 +78,7 @@ $(document).ready(function () {
 		$(".shopping-cart").removeClass("hideIcons")
 		$(".header .mid_header .mid_header-content .icons i").removeClass("whiteColor")
 		$(".accounts_view").css("right", "-350px")
+		$(".quick_view").css("transform","translate(-50%,-50%) scale(0)");
 	})
 	// side side menu  
 	$(".menu-btn").click(function () {
@@ -128,58 +109,25 @@ $(document).ready(function () {
 
 // main slider
 
-
-
-
-(function() {
-	var $slides = document.querySelectorAll('.slide');
-	var $controls = document.querySelectorAll('.slider__control');
-	var numOfSlides = $slides.length;
-	var slidingAT = 1300; // sync this with scss variable
-	var slidingBlocked = false;
+$(document).ready(function(){
   
-	[].slice.call($slides).forEach(function($el, index) {
-	  var i = index + 1;
-	  $el.classList.add('slide-' + i);
-	  $el.dataset.slide = i;
+	$(".Modern-Slider").slick({
+	  autoplay:true,
+	  autoplaySpeed:10000,
+	  speed:600,
+	  slidesToShow:1,
+	  slidesToScroll:1,
+	  pauseOnHover:false,
+	  dots:true,
+	  pauseOnDotsHover:true,
+	  cssEase:'linear',
+	 // fade:true,
+	  draggable:false,
+	  prevArrow:'<button class="PrevArrow"></button>',
+	  nextArrow:'<button class="NextArrow"></button>', 
 	});
-  
-	[].slice.call($controls).forEach(function($el) {
-	  $el.addEventListener('click', controlClickHandler);
-	});
-  
-	function controlClickHandler() {
-	  if (slidingBlocked) return;
-	  slidingBlocked = true;
-  
-	  var $control = this;
-	  var isRight = $control.classList.contains('m--right');
-	  var $curActive = document.querySelector('.slide.s--active');
-	  var index = +$curActive.dataset.slide;
-	  (isRight) ? index++ : index--;
-	  if (index < 1) index = numOfSlides;
-	  if (index > numOfSlides) index = 1;
-	  var $newActive = document.querySelector('.slide-' + index);
-  
-	  $control.classList.add('a--rotation');
-	  $curActive.classList.remove('s--active', 's--active-prev');
-	  document.querySelector('.slide.s--prev').classList.remove('s--prev');
-	  
-	  $newActive.classList.add('s--active');
-	  if (!isRight) $newActive.classList.add('s--active-prev');
-	  
-  
-	  var prevIndex = index - 1;
-	  if (prevIndex < 1) prevIndex = numOfSlides;
-  
-	  document.querySelector('.slide-' + prevIndex).classList.add('s--prev');
-  
-	  setTimeout(function() {
-		$control.classList.remove('a--rotation');
-		slidingBlocked = false;
-	  }, slidingAT*0.75);
-	};
-  }());
+	
+  })
 // var allButtons = document.querySelectorAll('.icon_head');
 // console.log("Found", allButtons.length, "div which class starts with “button”.");
 
@@ -208,10 +156,7 @@ $(document).ready(function () {
 
 });
 
-
-
 // slick slider at product details
-
 $('.slider-for').slick({
 	slidesToShow: 1,
 	slidesToScroll: 1,
@@ -283,3 +228,15 @@ $('.multiple-items').slick({
 $('.apply_btn').on('click', function() {
 	$(this).toggleClass('active');
   })
+
+//   show quick view
+$(".quickview_icon").click(function(){
+	$(".quick_view").css("transform","translate(-50%,-50%) scale(1)");
+	// $(".body_overlay").css("z-index","22")
+	$(".body_overlay").addClass("show_overlay")
+})
+//   close quick view
+$(".close_quickview").click(function(){
+	$(".quick_view").css("transform","translate(-50%,-50%) scale(0)");
+	$(".body_overlay").removeClass("show_overlay")
+})
