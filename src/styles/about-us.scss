@@ -1,0 +1,87 @@
+@import "../styles/variables.scss";
+
+.about-us_wrapper {
+  position: relative;
+  overflow: hidden;
+  .about-us_content {
+    background-color: $inner_pages_bk;
+    padding-bottom: 40px;
+    .about-us_title {
+      height: 300px;
+      background-color: #919191;
+      color: $white;
+      position: relative;
+      .txt {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: capitalize;
+        h2 {
+          font-size: 30px;
+          margin-bottom: 5px;
+        }
+        span {
+          text-align: center;
+          font-size: 16px;
+        }
+      }
+    }
+    .who_we_are {
+      margin: 25px 0;
+    }
+    .our_vision {
+      margin-bottom: 30px;
+    }
+    .our_brands {
+      .multiple-items {
+        margin-top: 60px;
+        // slider
+        .slick-next {
+          right: -60px;
+        }
+        .slick-prev {
+          left: -60px;
+        }
+        .slick-next, .slick-prev {
+            background-color: transparent;
+        }
+        .slick-next:before, .slick-prev:before {
+            color: $main-color;
+            font-size: 26px;
+        }
+        .slick-initialized .slick-slide {
+            display: flex;
+            justify-content: center;
+        }
+        .slick-slide img {
+            max-height: 120px;
+            margin: 0 auto;
+        }
+      }
+    }
+    h3 {
+      font-size: 30px;
+      color: $main-color;
+      position: relative;
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 600;
+      text-transform: capitalize;
+      &:after {
+        content: "";
+        bottom: 0px;
+        left: 50%;
+        height: 3px;
+        width: 100px;
+        background: #000;
+        position: absolute;
+        transform: translate(-50%, 7px);
+      }
+    }
+    p {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+  }
+}
