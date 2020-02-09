@@ -208,8 +208,16 @@ $('.multiple-items').slick({
 		},
 	  ]
 });
-
-
+// slider at filter section >> collection page
+$(".filter_slider").slick({
+	infinite: true,
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	speed: 600,
+	arrows: true,
+	autoplay: true,
+	dots: false,
+})
 // prevent a href from product home page
 
   function myFunction(x) {
@@ -239,4 +247,36 @@ $(".quickview_icon").click(function(){
 $(".close_quickview").click(function(){
 	$(".quick_view").css("transform","translate(-50%,-50%) scale(0)");
 	$(".body_overlay").removeClass("show_overlay")
+})
+
+// filter at collectio page
+$( ".filter_box li" ).click(function(e) {
+	e.stopPropagation()
+});
+$( ".filter_box" ).click(function() {
+	$(this).children('ul').slideToggle("show");
+	$(this).find(".filter_box-title i").toggleClass("rotate")
+  });
+
+
+//   view/ list grids at collection page
+$(".three_column").click(function(){
+	$(".cart_widget").removeClass("cart_widget4")
+	$(".cart_widget").toggleClass("cart_widget3")
+})
+$(".four_column").click(function(){
+	$(".cart_widget").removeClass("cart_widget3")
+	$(".cart_widget").removeClass("cart_widget1")
+	$(".cart_widget").toggleClass("cart_widget4")
+})
+$(".view_grid").click(function(){
+	$(".cart_widget").removeClass("cart_widget4")
+	$(".cart_widget").removeClass("cart_widget1")
+	$(".cart_widget").toggleClass("cart_widget3")
+})
+$(".list_grid").click(function(){
+	console.log("test")
+	$(".cart_widget").removeClass("cart_widget4")
+	$(".cart_widget").removeClass("cart_widget3")
+	$(".cart_widget").toggleClass("cart_widget1")
 })

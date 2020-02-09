@@ -388,10 +388,7 @@ label {
 }
 
 
-
-
-
-
+// scroll bar
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -413,4 +410,14 @@ label {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #b30000; 
+}
+
+// select box
+select {
+  margin-left: 14px;
+  width: 180px;
+  border: 1px solid #dadada;
+  background-color: #fff;
+  height: 40px;
+  cursor: pointer;
 }

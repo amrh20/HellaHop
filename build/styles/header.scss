@@ -642,6 +642,7 @@
 // mega menu
 .megamenu_one {
   position: absolute;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,.17);
   z-index: 2;
   background-color: $white;
   top: 74px;
@@ -752,6 +753,7 @@
   opacity: 0;
   visibility: hidden;
   transition: all .3s ease-in-out;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,.17);
   ul {
     display: block;
 
