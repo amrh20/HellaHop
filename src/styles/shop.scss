@@ -1,0 +1,35 @@
+@import "../styles/variables.scss";
+
+
+.shop_Content {
+    background-color: $inner_pages_bk;
+    padding: 40px 0;
+    .collection_img {
+        text-align: center;
+        background-color: $white;
+        img {
+            max-height: 300px;
+        }
+        .collection_img-overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .6);
+        }
+        .collection_img-overlay-text {
+            text-transform: capitalize;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 27px;
+            color: $white;
+            font-weight: 700;
+            border-bottom: 1px solid $white;
+            width: fit-content;
+            padding-bottom: 5px;
+        }
+    }
+}
