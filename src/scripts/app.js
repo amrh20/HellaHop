@@ -80,6 +80,7 @@ $(document).ready(function () {
 		$(".accounts_view").css("right", "-350px")
 		$(".quick_view").css("transform","translate(-50%,-50%) scale(0)");
 		 $(".filter_col").css("left","-770px")
+		 $(".body_overlay").css("z-index","2")
 	})
 	// side side menu  
 	$(".menu-btn").click(function () {
@@ -303,9 +304,14 @@ $(".view_filter-mobile").click(function(){
 	console.log("sddjhk")
  $(".filter_col").css("left","0")
  $(".body_overlay").addClass("show_overlay")
+ $(".body_overlay").css("z-index","222")
 })
 //  close filter at mobile >> collection page
 
-$(".close_filter").css("left","-770px")
+$(".close_filter").click(function(){
+	$(".filter_col").css("left","-500px")
+	$(".body_overlay").removeClass("show_overlay")
+	$(".body_overlay").css("z-index","2")
+})
 
 

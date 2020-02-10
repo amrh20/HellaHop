@@ -7,7 +7,7 @@
   .products_col {
     width: 75%;
    @media (max-width: 992px) {
-     width: 90%;
+     width: 80%;
      margin: 0 auto;
    }
   }
@@ -15,18 +15,36 @@
     width: 25%;
     padding-right: 20px;
     @media (max-width: 992px) {
-    width: 90%;
+    min-width: 300px;
+    max-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
     background: #fff;
     z-index: 222;
     position: fixed;
     top: -0;
-    left: -760px;
+    left: -400px;
     transition: all .4s ease-in-out;
     }
     .close_filter {
     position: absolute;
     top: 5px;
-    right: 10px;
+    right: 12px;
+    button {
+        background: transparent;
+        color: red;
+        border-radius: 50%;
+        border: 1px solid;
+        height: 25px;
+        width: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        i {
+            font-size: 14px;
+        }
+    }
     }
   }
   .collection_img {
@@ -120,6 +138,9 @@
           }
         }
       }
+      @media (max-width: 992px) {
+          display: none;
+      }
     }
     .view_list-grid {
       display: flex;
@@ -139,6 +160,49 @@
       .list_grid {
         cursor: pointer;
       }
+      @media (max-width: 992px) {
+        display: none;
+    }
+    }
+    .view_filter-mobile {
+        @media (min-width: 992px) {
+            display: none;
+        }
+    }
+    @media (max-width: 444px) {
+        display: block;
+    }
+    @media (max-width: 992px) {
+        .sort {
+            span {
+                font-size: 16px;
+            }
+            select {
+                width: 150px;
+            }
+        }
+        .view_filter-mobile {
+            text-align: center;
+            margin-top: 20px;
+            button {
+                border: 0;
+                background-color: $main-color;
+                color: #fff;
+                border-radius: 10px;
+                padding: 6px 20px;
+                cursor: pointer;
+                transition: all .3s ease-in-out;
+                border: 1px solid transparent;
+                &:hover {
+                    background-color: $white;
+                    color: $main-color;
+                    border: 1px solid $main-color;
+                }
+            }
+            @media (min-width: 444px) {
+                margin: 0;
+            }
+        }
     }
   }
   .products_widget {
@@ -149,6 +213,14 @@
         flex-basis: 33.33%;
         padding: 0 7px;
         margin-bottom: 30px;
+        @media (max-width: 444px) {
+            max-width: 100%;
+            flex-basis: 100%;
+        }
+        @media (min-width: 444.1px) and (max-width: 768px) {
+            max-width: 50%;
+            flex-basis: 50%;
+        }
     }
     .cart_widget4 {
       max-width: 25%;
