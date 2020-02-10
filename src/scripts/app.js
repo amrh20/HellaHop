@@ -79,6 +79,7 @@ $(document).ready(function () {
 		$(".header .mid_header .mid_header-content .icons i").removeClass("whiteColor")
 		$(".accounts_view").css("right", "-350px")
 		$(".quick_view").css("transform","translate(-50%,-50%) scale(0)");
+		 $(".filter_col").css("left","-770px")
 	})
 	// side side menu  
 	$(".menu-btn").click(function () {
@@ -215,7 +216,6 @@ $(".filter_slider").slick({
 	slidesToScroll: 1,
 	speed: 600,
 	arrows: true,
-	autoplay: true,
 	dots: false,
 })
 // prevent a href from product home page
@@ -253,6 +253,7 @@ $(".close_quickview").click(function(){
 $( ".filter_box li" ).click(function(e) {
 	e.stopPropagation()
 });
+
 $( ".filter_box" ).click(function() {
 	$(this).children('ul').slideToggle("show");
 	$(this).find(".filter_box-title i").toggleClass("rotate")
@@ -262,21 +263,49 @@ $( ".filter_box" ).click(function() {
 //   view/ list grids at collection page
 $(".three_column").click(function(){
 	$(".cart_widget").removeClass("cart_widget4")
+	$(".cart_widget").removeClass("cart_widget1")
 	$(".cart_widget").toggleClass("cart_widget3")
+	$(".cart").css({
+		"display" : "block",
+	})
 })
 $(".four_column").click(function(){
 	$(".cart_widget").removeClass("cart_widget3")
 	$(".cart_widget").removeClass("cart_widget1")
 	$(".cart_widget").toggleClass("cart_widget4")
+	$(".cart").css({
+		"display" : "block",
+	})
 })
 $(".view_grid").click(function(){
 	$(".cart_widget").removeClass("cart_widget4")
 	$(".cart_widget").removeClass("cart_widget1")
 	$(".cart_widget").toggleClass("cart_widget3")
+	$(".cart").css({
+		"display" : "block",
+	})
 })
 $(".list_grid").click(function(){
-	console.log("test")
+	
 	$(".cart_widget").removeClass("cart_widget4")
 	$(".cart_widget").removeClass("cart_widget3")
 	$(".cart_widget").toggleClass("cart_widget1")
+    $(".cart").css({
+		"display" : "flex",
+		"align-items": "center"
+	})
 })
+
+
+// show filter at mobile >> collection page
+
+$(".view_filter-mobile").click(function(){
+	console.log("sddjhk")
+ $(".filter_col").css("left","0")
+ $(".body_overlay").addClass("show_overlay")
+})
+//  close filter at mobile >> collection page
+
+$(".close_filter").css("left","-770px")
+
+
