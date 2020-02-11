@@ -193,40 +193,7 @@
     }
   }
 
-  // slider 
-  .slick-next,
-  .slick-prev {
-    background: transparent;
 
-    &:hover,
-    &:focus {
-      background: transparent;
-    }
-  }
-
-  .slick-next:before,
-  .slick-prev:before {
-    color: $main-color;
-    font-size: 30px;
-    border: 1px solid;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @media (max-width: 768px){
-      height: 30px;
-      width: 30px;
-      font-size: 20px;
-    }
-  }
-  .slick-next:before {
-    content: "\f30b";
-  }
-  .slick-prev:before {
-    content: "\f30a";
-  }
 
   .cart .cart_deatils {
     background-color: $white;

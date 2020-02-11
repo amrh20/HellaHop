@@ -609,3 +609,82 @@ select {
   }
 
 }
+
+
+   // dilter slider at product details
+   .filter_slider {
+    .product {
+      .product_view {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .product_img {
+          width: 60%;
+          img {
+            max-height: 100px
+          }
+        }
+        .product_details {
+          width: 40%;
+          text-transform: capitalize
+        }
+      }
+    }
+    .slick-next,
+    .slick-prev {
+      background-color: transparent;
+      top: -58px;
+    }
+    .slick-next:before,
+    .slick-prev:before {
+      color: $black;
+      font-size: 16px;
+    }
+
+    .slick-next {
+      right: -20px;
+    }
+    .slick-prev {
+      left: auto;
+      right: 0;
+    }
+  }
+
+
+  // main slider and related product at product details
+
+    // slider 
+    .slick-next,
+    .slick-prev {
+      background: transparent;
+  
+      &:hover,
+      &:focus {
+        background: transparent;
+      }
+    }
+  
+    .slick-next:before,
+    .slick-prev:before {
+      color: $main-color;
+      font-size: 30px;
+      border: 1px solid;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 38px;
+      @media (max-width: 768px){
+        height: 30px;
+        width: 30px;
+        font-size: 20px;
+      }
+    }
+    .slick-next:before {
+      content: "\f30b";
+    }
+    .slick-prev:before {
+      content: "\f30a";
+    }
