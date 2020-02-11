@@ -78,9 +78,9 @@ $(document).ready(function () {
 		$(".shopping-cart").removeClass("hideIcons")
 		$(".header .mid_header .mid_header-content .icons i").removeClass("whiteColor")
 		$(".accounts_view").css("right", "-350px")
-		$(".quick_view").css("transform","translate(-50%,-50%) scale(0)");
-		 $(".filter_col").css("left","-770px")
-		 $(".body_overlay").css("z-index","2")
+		$(".quick_view").css("transform", "translate(-50%,-50%) scale(0)");
+		$(".filter_col").css("left", "-770px")
+		$(".body_overlay").css("z-index", "2")
 	})
 	// side side menu  
 	$(".menu-btn").click(function () {
@@ -111,25 +111,25 @@ $(document).ready(function () {
 
 // main slider
 
-$(document).ready(function(){
-  
+$(document).ready(function () {
+
 	$(".Modern-Slider").slick({
-	  autoplay:true,
-	  autoplaySpeed:10000,
-	  speed:600,
-	  slidesToShow:1,
-	  slidesToScroll:1,
-	  pauseOnHover:false,
-	  dots:true,
-	  pauseOnDotsHover:true,
-	  cssEase:'linear',
-	 // fade:true,
-	  draggable:false,
-	  prevArrow:'<button class="PrevArrow"></button>',
-	  nextArrow:'<button class="NextArrow"></button>', 
+		autoplay: true,
+		autoplaySpeed: 10000,
+		speed: 600,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		pauseOnHover: false,
+		dots: true,
+		pauseOnDotsHover: true,
+		cssEase: 'linear',
+		// fade:true,
+		draggable: false,
+		prevArrow: '<button class="PrevArrow"></button>',
+		nextArrow: '<button class="NextArrow"></button>',
 	});
-	
-  })
+
+})
 // var allButtons = document.querySelectorAll('.icon_head');
 // console.log("Found", allButtons.length, "div which class starts with “button”.");
 
@@ -188,27 +188,27 @@ $('.multiple-items').slick({
 	dots: false,
 	responsive: [
 		{
-		  breakpoint: 768,
-		  settings: {
-			slidesToShow: 1,
-			slidesToScroll: 1,
-		  },
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+			},
 		},
 		{
 			breakpoint: 992,
 			settings: {
-			  slidesToShow: 2,
-			  slidesToScroll: 1,
+				slidesToShow: 2,
+				slidesToScroll: 1,
 			},
-		  },
-		{
-		  breakpoint: 992,
-		  settings: {
-			slidesToShow: 3,
-			slidesToScroll: 1,
-		  }
 		},
-	  ]
+		{
+			breakpoint: 992,
+			settings: {
+				slidesToShow: 3,
+				slidesToScroll: 1,
+			}
+		},
+	]
 });
 // slider at filter section >> collection page
 $(".filter_slider").slick({
@@ -221,78 +221,75 @@ $(".filter_slider").slick({
 })
 // prevent a href from product home page
 
-  function myFunction(x) {
+function myFunction(x) {
 	if (x.matches) { // If media query matches
-		$(".prevent_click_mobile").on("click", function(event) {
+		$(".prevent_click_mobile").on("click", function (event) {
 			event.preventDefault();
-		  });
-	} 
-  }
-  var x = window.matchMedia("(max-width: 768px)")
-  myFunction(x) // Call listener function at run time
-  x.addListener(myFunction) // Attach listener function on state changes
+		});
+	}
+}
+var x = window.matchMedia("(max-width: 768px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
 
 
 // apply coupon at cart page
-$('.apply_btn').on('click', function() {
+$('.apply_btn').on('click', function () {
 	$(this).toggleClass('active');
-  })
+})
 
 //   show quick view
-$(".quickview_icon").click(function(){
-	$(".quick_view").css("transform","translate(-50%,-50%) scale(1)");
+$(".quickview_icon").click(function () {
+	$(".quick_view").css("transform", "translate(-50%,-50%) scale(1)");
 	// $(".body_overlay").css("z-index","22")
 	$(".body_overlay").addClass("show_overlay")
 })
 //   close quick view
-$(".close_quickview").click(function(){
-	$(".quick_view").css("transform","translate(-50%,-50%) scale(0)");
+$(".close_quickview").click(function () {
+	$(".quick_view").css("transform", "translate(-50%,-50%) scale(0)");
 	$(".body_overlay").removeClass("show_overlay")
 })
 
 // filter at collectio page
-$( ".filter_box li" ).click(function(e) {
+$(".filter_box li").click(function (e) {
 	e.stopPropagation()
 });
 
-$( ".filter_box" ).click(function() {
+$(".filter_box").click(function () {
 	$(this).children('ul').slideToggle("show");
 	$(this).find(".filter_box-title i").toggleClass("rotate")
-  });
+});
 
 
 //   view/ list grids at collection page
-$(".three_column").click(function(){
+$(".three_column").click(function () {
 	$(".cart_widget").removeClass("cart_widget4")
 	$(".cart_widget").removeClass("cart_widget1")
 	$(".cart_widget").toggleClass("cart_widget3")
 	$(".cart").css({
-		"display" : "block",
+		"display": "block",
 	})
 })
-$(".four_column").click(function(){
+$(".four_column").click(function () {
 	$(".cart_widget").removeClass("cart_widget3")
 	$(".cart_widget").removeClass("cart_widget1")
 	$(".cart_widget").toggleClass("cart_widget4")
 	$(".cart").css({
-		"display" : "block",
+		"display": "block",
 	})
 })
-$(".view_grid").click(function(){
-	$(".cart_widget").removeClass("cart_widget4")
+$(".view_grid").click(function () {
 	$(".cart_widget").removeClass("cart_widget1")
-	$(".cart_widget").toggleClass("cart_widget3")
 	$(".cart").css({
-		"display" : "block",
+		"display": "block",
 	})
 })
-$(".list_grid").click(function(){
-	
+$(".list_grid").click(function () {
 	$(".cart_widget").removeClass("cart_widget4")
 	$(".cart_widget").removeClass("cart_widget3")
 	$(".cart_widget").toggleClass("cart_widget1")
-    $(".cart").css({
-		"display" : "flex",
+	$(".cart").css({
+		"display": "flex",
 		"align-items": "center"
 	})
 })
@@ -300,18 +297,18 @@ $(".list_grid").click(function(){
 
 // show filter at mobile >> collection page
 
-$(".view_filter-mobile").click(function(){
+$(".view_filter-mobile").click(function () {
 	console.log("sddjhk")
- $(".filter_col").css("left","0")
- $(".body_overlay").addClass("show_overlay")
- $(".body_overlay").css("z-index","222")
+	$(".filter_col").css("left", "0")
+	$(".body_overlay").addClass("show_overlay")
+	$(".body_overlay").css("z-index", "222")
 })
 //  close filter at mobile >> collection page
 
-$(".close_filter").click(function(){
-	$(".filter_col").css("left","-500px")
+$(".close_filter").click(function () {
+	$(".filter_col").css("left", "-500px")
 	$(".body_overlay").removeClass("show_overlay")
-	$(".body_overlay").css("z-index","2")
+	$(".body_overlay").css("z-index", "2")
 })
 
 
