@@ -116,7 +116,6 @@
   .cart_deatils {
     text-align: center;
     padding: 0 25px;
-
     .product_name {
       h3 {
         font-weight: 600;
@@ -165,6 +164,9 @@
         background-color: #000;
       }
     }
+    @media (max-width: 768px) {
+      padding: 0 15px;
+    }
   }
 
   .product-icons {
@@ -179,7 +181,9 @@
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
-
+    a > div {
+      margin-top: 7px;
+    }
     &>div {
       margin-top: 7px;
       cursor: pointer;
@@ -201,67 +205,12 @@
       font-size: 14px;
       transition: all 0.3s ease-in-out;
     }
-
-    .tooltipe {
-      position: relative;
-
-      &::before {
-        border-radius: 10px;
-        position: absolute;
-        top: -39px;
-        z-index: 1;
-        left: -39px;
-        background-color: #000;
-        color: #fff;
-        text-align: center;
-        width: 110px;
-        padding: 6px 0;
-        content: attr(data-tooltip);
-        font-size: 14px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all .3s ease-in-out;
-
-        @media (max-width: 992px) {
-          display: none;
-        }
-      }
-
-      &:after {
-        border-color: #000 transparent;
-        border-style: solid;
-        border-width: 0 10px 10px;
-        height: 0;
-        width: 0;
-        right: 5px;
-        position: absolute;
-        content: "";
-        transform: rotate(180deg);
-        opacity: 0;
-        visibility: hidden;
-        bottom: 26px;
-        transition: all .3s ease-in-out;
-
-        @media (max-width: 992px) {
-          display: none;
-        }
-      }
-
-      &:hover {
-        &::before {
-          opacity: 1;
-          visibility: visible;
-          top: -43px;
-        }
-
-        &:after {
-          bottom: 30px;
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-
+  .view_product-icon {
+    @media (min-width: 992px) {
+      display: none;
     }
+  }
+  
   }
 
   .product-labels {
