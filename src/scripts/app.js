@@ -82,12 +82,13 @@ $(document).ready(function () {
 		$(".filter_col").css("left", "-770px")
 		$(".body_overlay").css("z-index", "2")
 	})
-	// side side menu  
+	// show side menu  
 	$(".menu-btn").click(function () {
 		$(".side_menu").toggleClass("view_side-menu")
 		$(".body_overlay").addClass("show_overlay");
 		$(".wrapper_content").toggleClass("act")
 		$(this).toggleClass("opactiy_zero")
+		$(".body_overlay").css("z-index", "22")
 	})
 	// close side menu
 	$(".body_overlay").click(function () {
@@ -167,7 +168,8 @@ $('.main-silder').slick({
 	slidesToScroll: 1,
 	speed: 600,
 	arrows: true,
-	autoplay: false,
+	autoplay: false
+	,
 	dots: false,
 });
 //   related products slider

@@ -39,10 +39,17 @@
         // slider
         .slick-next {
           right: -60px;
+          @media (max-width: 768px) {
+            right: 0;
+          }
         }
         .slick-prev {
           left: -60px;
+          @media (max-width: 768px) {
+            left: 0;
+          }
         }
+
         .slick-next, .slick-prev {
             background-color: transparent;
         }
