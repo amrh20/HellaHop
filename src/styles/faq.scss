@@ -20,14 +20,15 @@
   }
   
   .question {
-    color: #fff;
+    color: $black;
     position: relative;
-    background: #2980b9;
+    background: $white;
     margin: 0;
     padding: 10px 10px 10px 50px;
     display: block;
     width:100%;
     cursor: pointer;
+    text-transform: capitalize;
   }
   
   .answers {
@@ -54,7 +55,7 @@
   }
   
   .plus {
-    color:#fff;
+    color: $black;
     position: absolute;
     margin-left: 10px;
     margin-top: 5px;

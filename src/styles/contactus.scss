@@ -1,0 +1,196 @@
+@import "../styles/variables.scss";
+
+.contact_us-wrapper {
+  background-color: $inner_pages_bk;
+  padding: 50px 0;
+  h3 {
+    font-size: 22px;
+    position: relative;
+    font-weight: 700;
+    display: inline-block;
+    text-transform: capitalize;
+    &:after {
+      display: block;
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: $main-color;
+      position: absolute;
+      left: 0;
+      margin: 8px 0;
+    }
+  }
+}
+
+.contact_info {
+  background-color: $white;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 30px;
+  .contact_details {
+    margin-top: 30px;
+    p {
+      margin-bottom: 15px;
+      font-size: 20px;
+      strong {
+        text-transform: capitalize;
+        margin-right: 5px;
+      }
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// message up
+.message_us {
+  background-color: $white;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 30px;
+
+  // contact form
+  .form {
+    text-align: center;
+    animation: bounce 1.5s infinite;
+    margin-top: 40px;
+  }
+  .shadow {
+    box-shadow: 0px 0px 20px 5px #aaa;
+    opacity: 0.5;
+    border-radius: 100px;
+    width: 45%;
+    margin: 40px auto 0 auto;
+    padding: 0 10px;
+    -webkit-animation: shadow 1.5s infinite;
+  }
+  .field-in {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 50%;
+    transition: all 0.5s ease 0s;
+    @media (max-width: 992px) {
+      width: 100%;
+    }
+  }
+  .name {
+    background-color: #555555;
+    border-bottom: 5px solid #555555;
+    color: $white;
+  }
+  //   .name:hover {
+  //     background-color: #f7f7f7;
+  //     border-bottom: 5px solid #f7f7f7;
+  //   }
+  .name:focus,
+  .email:focus,
+  .message:focus {
+    outline: none;
+    padding: 15px;
+  }
+  .email {
+    background-color: #555555;
+    border-bottom: 5px solid #555555;
+    color: $white;
+  }
+  //   .email:hover {
+  //     background-color: #2014cb;
+  //     border-bottom: 5px solid #18108e;
+  //   }
+  .message {
+    background-color: #555555;
+    border-bottom: 5px solid #555555;
+    overflow: hidden;
+    height: 50px;
+    color: $white;
+  }
+  .message:hover {
+    // background-color: #2dd7bb;
+    // border-bottom: 5px solid #2bb09a;
+    height: 200px;
+  }
+  .submit {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: $main-color;
+    border: none;
+    border-bottom: 5px solid $main-color;
+    transition: all 0.5s ease 0s;
+    color: $white;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+  .submit:hover {
+    // -webkit-transform: translate(0, 4px);
+    // border-bottom: 2px solid #cb64b2;
+    // box-shadow: inset 0px 0px 10px 10px #fff;
+    cursor: pointer;
+  }
+  ::-webkit-input-placeholder {
+    color: white;
+  }
+
+  :-moz-placeholder {
+    color: white;
+  }
+
+  ::-moz-placeholder {
+    color: white;
+  }
+
+  :-ms-input-placeholder {
+    color: white;
+  }
+
+  @-webkit-keyframes bounce {
+    0% {
+    }
+    50% {
+      -webkit-transform: translate(0, 8px);
+    }
+  }
+  @-moz-keyframes bounce {
+    0% {
+    }
+    50% {
+      -moz-transform: translate(0, 8px);
+    }
+  }
+  @keyframes bounce {
+    0% {
+    }
+    50% {
+      transform: translate(0, 8px);
+    }
+  }
+  @-webkit-keyframes shadow {
+    0% {
+    }
+    50% {
+      opacity: 0.8;
+      width: 50%;
+    }
+  }
+  @-moz-keyframes shadow {
+    0% {
+    }
+    50% {
+      opacity: 0.8;
+      width: 50%;
+    }
+  }
+  @keyframes shadow {
+    0% {
+    }
+    50% {
+      opacity: 0.8;
+      width: 50%;
+    }
+  }
+}
