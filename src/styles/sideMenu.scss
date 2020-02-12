@@ -96,8 +96,8 @@
                 }   
             } 
     }
-    // childern
-    .childern {
+    // children
+    .children {
     position: fixed;
     top: 0;
     background: #b33939;
@@ -108,7 +108,7 @@
     height: 100vh;
     left: -333px;
     transition: all .3s ease-in-out;
-    .close_childernmenu {
+    .close_childrenmenu {
         position: absolute;
         cursor: pointer;
         right: 0;
@@ -127,7 +127,7 @@
         }
     }
     }
-    .showchildern {
+    .showchildren {
         left: 0;
     }
     }

@@ -18,10 +18,10 @@
         .langauge-dropdown,
         .currency-dropdown {
           position: relative;
+          text-transform: uppercase;
           .top_header-dropdown-head {
             cursor: pointer;
             width: fit-content;
-            text-transform: capitalize;
              span {
               -webkit-touch-callout: none; /* iOS Safari */
                -webkit-user-select: none; /* Safari */
@@ -37,7 +37,7 @@
               box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.17);
               color: $black;
               min-width: 80px;
-              text-transform: capitalize;
+              text-transform: uppercase;
               opacity: 0;
               visibility: hidden;
               transition: all 0.3s ease-in-out;
@@ -923,7 +923,7 @@
       }
     }
   }
-  .dropdown_one-childern {
+  .dropdown_one-children {
     position: absolute;
     left: 100%;
     box-shadow: 0 1px 2px 1px #999;
@@ -948,9 +948,9 @@
       }
     }
   }
-  .link_childern {
+  .link_children {
     &:hover {
-      .dropdown_one-childern {
+      .dropdown_one-children {
         top: 0;
         opacity: 1;
         visibility: visible;

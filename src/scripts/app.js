@@ -94,7 +94,7 @@ $(document).ready(function () {
 		$(".side_menu").removeClass("view_side-menu");
 		$(".wrapper_content").removeClass("act");
 		$(".menu-btn").removeClass("opactiy_zero")
-		$(".childern").removeClass("showchildern");
+		$(".children").removeClass("showchildren");
 	})
 	$(".close_sidemenu").click(function () {
 		$(".side_menu").removeClass("view_side-menu");
@@ -102,10 +102,10 @@ $(document).ready(function () {
 		$(".menu-btn").toggleClass("opactiy_zero");
 		$(".body_overlay").removeClass("show_overlay");
 	})
-	// show childern at side menu
+	// show children at side menu
 	$("ul.categories li i").click(function () {
 		console.log("test")
-		$("div").toggleClass("showchildern")
+		$("div").toggleClass("showchildren")
 	})
 });
 

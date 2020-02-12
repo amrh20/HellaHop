@@ -775,7 +775,7 @@
     }
     }
   }
-.dropdown_one-childern {
+.dropdown_one-children {
   position: absolute;
   left: 100%;
   width: 100%;
@@ -799,9 +799,9 @@
     }
   }
 }
-.link_childern {
+.link_children {
  &:hover {
-   .dropdown_one-childern {
+   .dropdown_one-children {
      top: 0;
      opacity: 1;
      visibility: visible;

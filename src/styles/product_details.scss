@@ -23,12 +23,17 @@
     .slick-slide {
       background-color: $white;
       padding: 10px;
-      @media (max-width: 768px){
+      padding-bottom: 0;
+
+      @media (max-width: 768px) {
         padding: 5px;
       }
     }
+ 
   }
-
+  .slick-slider .slick-track, .slick-slider .slick-list {
+    display: flex;
+  }
   .product_breadcrumb {
     font-size: 16px;
     text-transform: capitalize;
@@ -193,14 +198,14 @@
     }
   }
 
-
-
   .cart .cart_deatils {
     background-color: $white;
   }
 }
 
 .product_name {
+  text-transform: capitalize;
+
   h4 {
     font-size: 25px;
     font-weight: 700;
