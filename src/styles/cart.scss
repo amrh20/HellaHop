@@ -117,6 +117,7 @@
   .cart_deatils {
     text-align: center;
     padding: 0 25px;
+
     .product_name {
       h3 {
         font-weight: 600;
@@ -165,6 +166,7 @@
         background-color: #000;
       }
     }
+
     @media (max-width: 768px) {
       padding: 0 15px;
     }
@@ -182,9 +184,11 @@
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
-    a > div {
+
+    a>div {
       margin-top: 7px;
     }
+
     &>div {
       margin-top: 7px;
       cursor: pointer;
@@ -206,12 +210,13 @@
       font-size: 14px;
       transition: all 0.3s ease-in-out;
     }
-  .view_product-icon {
-    @media (min-width: 992px) {
-      display: none;
+
+    .view_product-icon {
+      @media (min-width: 992px) {
+        display: none;
+      }
     }
-  }
-  
+
   }
 
   .product-labels {
