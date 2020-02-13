@@ -307,3 +307,14 @@ $(".close_filter").click(function () {
 })
 
 
+
+
+
+// $('.openBtn').on('click',function(){
+//     $('.modal-body').load('https://zvendo.com/blog/docs',function(){
+//         $('#myModal').modal({show:true});
+//     });
+// });
+
+
+
